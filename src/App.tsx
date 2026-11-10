@@ -1,13 +1,33 @@
 import { useState } from 'react'
 import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import RecipeDetails from './pages/RecipeDetails'
+import Favorites from './pages/Favorites'
+import Search from './pages/Search'
+import Category from './pages/Category'
+import Home from './pages/Home'
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      <h1>Recipe Discovery App</h1>
-    </div>
+     <Routes>
+      <Route path="/" element={<Home />} />
+
+      <Route
+        path="/category/:categoryName"
+        element={<Category />}
+      />
+
+      <Route
+        path="/recipe/:recipeId"
+        element={<RecipeDetails />}
+      />
+
+      <Route path="/favorites" element={<Favorites />} />
+
+      <Route path="/search" element={<Search />} />
+    </Routes>
   )
 }
 

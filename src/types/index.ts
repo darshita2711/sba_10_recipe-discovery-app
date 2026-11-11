@@ -18,3 +18,7 @@ export interface RecipeCategory {
 export interface CategoryResponse {
   categories: RecipeCategory[];
 }
+
+export interface CategoryMealResponse {
+  meals: Meal[] | null;
+}

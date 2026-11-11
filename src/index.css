@@ -53,3 +53,30 @@
     grid-template-columns: 1fr;
   }
 }
+
+.category-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.category-page h1 {
+  color: #263238;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.category-page > p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.back-link {
+  color: #d97732;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}

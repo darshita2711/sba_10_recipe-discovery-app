@@ -22,3 +22,16 @@ export interface CategoryResponse {
 export interface CategoryMealResponse {
   meals: Meal[] | null;
 }
+
+export interface MealDetails extends Meal {
+  strCategory: string;
+  strArea: string;
+  strInstructions: string;
+  strYoutube: string;
+
+  [key: string]: string | undefined;
+}
+
+export interface MealDetailsResponse {
+  meals: MealDetails[] | null;
+}

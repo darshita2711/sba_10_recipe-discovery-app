@@ -15,10 +15,17 @@ function Home() {
       {error && <p>{error}</p>}
 
       {data?.meals?.map((meal) => (
-        <p key={meal.idMeal}>{meal.strMeal}</p>
-      ))}
+       <div key={meal.idMeal}>
+        <h3>{meal.strMeal}</h3>
+        <img
+          src={meal.strMealThumb}
+          alt={meal.strMeal}
+          width="200"
+        />
       </div>
-  );
+    ))}
+  </div>
+  )
 }
 
 export default Home;

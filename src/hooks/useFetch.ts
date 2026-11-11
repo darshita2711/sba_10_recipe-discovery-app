@@ -7,6 +7,7 @@ function useFetch<T>(url: string) {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
+    const controller = new AbortController();
     setLoading(true);
     setError(null);
        fetch(url)
@@ -16,15 +17,29 @@ function useFetch<T>(url: string) {
         }
       return response.json();
     })
-    .then((result) => {
-      console.log(result);
-      setData(result);
-      setLoading(false);
-    })
-    .catch((err) => {
-      setError(err.message);
-      setLoading(false);
-    });
+  .then((result: T) => {
+        setData(result);
+      })
+      .catch((err: unknown) => {
+        if (err instanceof Error && err.name === "AbortError") {
+          return;
+        }
+
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("An unexpected error occurred.");
+        }
+      })
+      .finally(() => {
+        if (!controller.signal.aborted) {
+          setLoading(false);
+        }
+      });
+
+    return () => {
+      controller.abort();
+    };
 }, [url]);
     return { data, loading, error };
 

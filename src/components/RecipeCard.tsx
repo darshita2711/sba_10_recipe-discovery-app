@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import type { Meal } from "../types";
-import { useFavorites } from "../pages/Favorites";
+import { useFavorites } from "../context/FavoritesContext";
 
 interface RecipeCardProps {
   meal: Meal;

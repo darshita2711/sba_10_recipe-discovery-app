@@ -1,32 +1,78 @@
-# React + TypeScript + Vite
+# Recipe Discovery App
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## Project Description
 
-Currently, two official plugins are available:
+Recipe Discovery App is a React and TypeScript application that helps users discover recipes using TheMealDB API. Users can explore food categories, search for meals, view recipe details, and save their favorite recipes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Browse different food categories.
+- Search for recipes by name.
+- View recipe images, ingredients, measurements, and cooking instructions.
+- Add and remove favorite recipes.
+- Save favorite recipes using Local Storage.
+- Navigate between pages using React Router.
+- Responsive design for different screen sizes.
+- Loading and error handling for API requests.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies Used
 
-## Expanding the Oxlint configuration
+- React
+- TypeScript
+- Vite
+- React Router DOM
+- Context API
+- Custom Hooks
+- CSS3
+- TheMealDB API
+- Local Storage
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Installation and Setup
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+### 1. Clone the repository
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### 2. Navigate to the project directory
+
+```bash
+cd recipe-discovery-app
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+### 5. Open the application
+
+Open the local URL displayed in your terminal, usually:
+
+`http://localhost:5173`
+
+## Reflection
+
+### Most Challenging Part
+
+The most challenging part of this project was managing data across different components, especially implementing the favorites feature. I needed to understand how Context API and Local Storage work together so that users could save recipes and keep their favorites even after refreshing the page.
+
+Working with API requests and handling loading and error states was also a valuable learning experience.
+
+### Design Decision
+
+I decided to use a custom `useFetch` hook to handle API requests, loading states, and errors in one reusable place. This helped avoid repeating the same fetching logic in multiple components.
+
+I also used Context API to manage favorite recipe IDs across the application and a custom `useLocalStorage` hook to persist them in the browser. This made the favorites feature easier to manage and share between pages.
+
+---
+
+**Author:** Darshita Vaghela

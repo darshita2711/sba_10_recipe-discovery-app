@@ -3,6 +3,8 @@ import { useSearchParams, Link } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import type { MealResponse } from "../types";
 import RecipeCard from "../components/RecipeCard";
+import ErrorMessage from "../components/ErrorMessage";
+import Spinner from "../components/Spinner";
 
 function Search() {
   const [searchParams] = useSearchParams();
@@ -31,13 +33,9 @@ function Search() {
         </p>
       </section>
 
-      {loading && (
-        <p className="search-message">Searching recipes...</p>
-      )}
+      {loading && <Spinner message="Searching recipes..." />}
 
-      {error && (
-        <p className="error-message">{error}</p>
-      )}
+{error && <ErrorMessage message={error} />}
 
       {!loading &&
         !error &&

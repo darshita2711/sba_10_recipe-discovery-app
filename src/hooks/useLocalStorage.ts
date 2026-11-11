@@ -23,7 +23,7 @@ function useLocalStorage<T>(
     try {
       window.localStorage.setItem(key, JSON.stringify(storedValue));
     } catch {
-      // Ignore storage errors if the browser blocks localStorage.
+       console.error("Unable to save data to localStorage.");
     }
   }, [key, storedValue]);
 

@@ -175,3 +175,49 @@
     font-size: 26px;
   }
 }
+
+.recipe-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-4px);
+}
+
+.recipe-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.favorite-button {
+  display: block;
+  width: calc(100% - 30px);
+  margin: 0 15px 15px;
+  padding: 10px;
+  border: 1px solid #e99b50;
+  border-radius: 7px;
+  background-color: white;
+  color: #d97732;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.favorite-button:hover {
+  background-color: #fff2e6;
+}
+
+.favorite-button.is-favorite {
+  background-color: #e99b50;
+  color: white;
+}
+
+.favorite-button.is-favorite:hover {
+  background-color: #d97732;
+}
